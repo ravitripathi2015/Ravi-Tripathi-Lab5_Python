@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang='en'>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+   </head>
+   <body>
+      <div class='car-image'>
+         <div class='car-text'>
+         <h1 style='font-size:50px'> Used Car Price Predictor</h1>
+         <br><br><h3>{{prediction_text}}</h3>
+         </div>
+      </div>
+      <style>
+         body, html {
+         height:75%;
+         margin:10;
+         font-family: Arial, Helvetica, sans-serif;
+         position: center;
+         }
+         .car-image{
+	 background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://www.kbb.com/wp-content/uploads/other-images/e-commerce-images/01-car-buying-600x450.jpg');
+         height:50%;
+         background-position:bottom;
+         background-repeat:no-repeat;
+         background-size:cover;
+         position: center;
+         }
+         .car-text{
+         text-align:center;
+         position:center;
+         top:50%;
+         left:50%;
+         }
+      </style>
+      <div style="color: rgb(0,0,0)">
+         <form action="{{url_for('predict')}}" method='post'>
+            <h2>Enter Car Details:</h2>
+            <h3>Age of the Car(in years)</h3>
+            <input id='first' name='Age_of_the_car' type='number'>
+            <h3>Present Showroom Price(in laks)</h3>
+            <input id='second' name='Present_price' required='required'>
+            <h3>Km Driven</h3>
+            <input id='third' name='Kms_Driven' required='required'>
+            <h3>Owner of the Car(0/1/3)</h3>
+            <input id='fourth' name='Owner' required='required'>
+            <h3>Fuel Type</h3>
+            <br>
+            <select name='Fuel_Type' id='fuel' required='required'>
+               <option value='0'> Petrol </option>
+               <option value='1'> Diesel </option>
+               <option value='2'> CNG </option>
+            </select>
+            <h3>Seller Type</h3>
+            <br>
+            <select name='Seller_Type' id='resea' required='required'>
+               <option value='0'> Dealer </option>
+               <option value='1'> Individual </option>
+            </select>
+            <h3>Transmission Type</h3>
+            <br>
+            <select name='Transmission' id='research' required='required'>
+            <option value='0'> Manual Car </option>
+            <option value='1'> Automatic Car </option>
+            </select>
+            <br><br><button id='sub' type='Submit'> Predict Selling Price</button>
+         </form>
+      </div>
+      <style>
+      body{
+      background-color:101,10,20;
+      text-align:centre;
+      padding:0px;
+      font-family: Helvetica;
+      background-color:white;
+      position:center;
+      }
+      #research{
+      font-size:18px;
+      width:200px;
+      height: 23px;
+      top:23px;
+      }
+      #box{
+      border-radius:60px;
+      border-color:45px;
+      border-style: solid;
+      text-align:center;
+      background-color: center;
+      font-size: medium;
+      position:absolute;
+      width:700px;
+      bottom: 9%;
+      height: 850px;
+      right:30%;
+      padding:0px;
+      margin:0px;
+      font-size:14px;
+      }
+      #fuel{
+      width:83px;
+      height:43px;
+      text-align:center;
+      border-radius: 14px;
+      font-size:20px;
+      }
+      #fuel:hover{
+      background-color: white;
+      }
+      #research{
+      width: 150px;
+      height: 43px;
+      text-align: center;
+      border-radius: 14px;
+      font-size:18px;
+      }
+      #researh: hover{
+      background-color: white;
+      }
+      #sub{
+      background-color: Green;
+      font-family:'Helvetica' monospace;
+      font-weight: bold;
+      width:180px;
+      height:60px;
+      text-align:center;
+      border-radius:20px;
+      font-size:18px;
+      color:white;
+      }
+      #sub:hover{
+      background-color: white;
+      }
+      #first{
+      border-radius:14px;
+      height:25px;
+      font-size:20px;
+      text-align:center;
+      }
+      #second{
+      border-radius:14px;
+      height:25px;
+      font-size:20px;
+      text-align:center;
+      }
+      #third{
+      border-radius:14px;
+      height:25px;
+      font-size:20px;
+      text-align:center;
+      }
+      #fourth{
+      border-radius:14px;
+      height:25px;
+      font-size:20px;
+      text-align:center;
+      }
+</style>
+</body>
+
+</html>
